@@ -3,7 +3,7 @@
 @import "../bower_components/breakpoint-sass/stylesheets/breakpoint";
 
 $susy: (
-  columns: 12, 
+  columns: 12,
   container: 1140px,
   gutters: 0.25,
   global-box-sizing: border-box,
@@ -12,6 +12,7 @@ $susy: (
 
 .testing {
   @include span(12);
+  background: pink;
 }
 
 .testing2 {
@@ -20,10 +21,11 @@ $susy: (
 }
 
 .testing3 {
+  background: yellow;
   @include span(2);
   margin-left: span(6);
   @include breakpoint(20em) {
-    @include span(4); 
+    @include span(4);
     margin-left: span(3);
   }
 }

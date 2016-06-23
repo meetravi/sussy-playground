@@ -1,0 +1,90 @@
+@import "normalize";
+@import "../bower_components/susy/sass/susy";
+@import "../bower_components/breakpoint-sass/stylesheets/breakpoint";
+
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  container: 71.25rem,
+  global-box-sizing: border-box,
+);
+
+// Colours
+$color-primary: #38a1d6;
+$color-secondary: #16f4d0;
+$color-tertiary: #fcee21;
+$color-grey: #a1acb5;
+$color-grey-light: #dce8ef;
+$color-grey-dark: #333;
+
+// Breakpoints
+$mobile-landscape: 30rem; // 480px
+$tablet: 40rem; // 640px
+$tablet-wide: 48rem; // 768px
+$desktop: 64rem; // 1024px
+$widescreen: 71.25rem; // 1140px
+
+* {
+  box-sizing: border-box;
+}
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.container {
+  @include container();
+}
+
+header {
+  background-color: $color-primary;
+  height: 4rem;
+  margin-bottom: gutter();
+}
+
+.content {
+  padding: 0 gutter();
+}
+
+section {
+  background-color: $color-secondary;
+  height: 16rem;
+  margin-bottom: gutter();
+  @extend %clearfix;
+
+  @media (min-width: $tablet-wide) {
+    @include span(8 of 12);
+  }
+}
+
+aside {
+  background-color: $color-tertiary;
+  height: 16rem;
+  margin-bottom: gutter();
+
+  @media (min-width: $tablet-wide) {
+    @include span(4 of 12 last);
+  }
+}
+
+footer {
+  background-color: $color-grey;
+  height: 4rem;
+}
+
+.outline {
+  display: block;
+  margin: gutter() 0;
+  font-family: Lato, sans-serif;
+  color: $color-primary;
+  text-decoration: none;
+  text-align: center;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
